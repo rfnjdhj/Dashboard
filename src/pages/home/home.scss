@@ -11,6 +11,9 @@
         padding: 20px;
         border-radius: 10px;
         border: 2px solid;
+        overflow-x: auto;
+        touch-action: pan-x;
+        -webkit-overflow-scrolling: touch;
      }
 
      .box1{
@@ -26,4 +29,16 @@
         grid-row: span 2;
      }
 
+}
+
+@media (max-width: 768px) {
+    .home {
+        grid-template-columns: 1fr;
+        .box {
+            grid-column: span 1 !important;
+            overflow-x: auto;
+            touch-action: pan-x;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
 }

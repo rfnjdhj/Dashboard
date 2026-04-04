@@ -1,5 +1,7 @@
 import "./piechartbox.scss";
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import Skeleton from '../skeleton/Skeleton';
+import React, { useState, useEffect } from 'react';
 
 
 const data = [
@@ -12,6 +14,25 @@ const data = [
 
 
 const PieChartBox = () => {
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    // 模拟数据加载延迟
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 900);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  if (loading) {
+    return (
+      <div className='pieChartBox'>
+        <Skeleton type="pie" height={300} />
+      </div>
+    );
+  }
+
   return (
     <div className='pieChartBox'>
         <h1>Leads By source</h1>
@@ -19,7 +40,7 @@ const PieChartBox = () => {
         <ResponsiveContainer width="99%" height={300}>
            <PieChart>
             <Tooltip
-            contentStyle={{background:"white", borderRadius:"5px"}} />
+            contentStyle={{background:"#2a3447", borderRadius:"5px", border: "1px solid #384256", color: "#fff"}} />
             <Pie
             data={data}
             innerRadius={60}
