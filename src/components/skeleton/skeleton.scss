@@ -1,0 +1,100 @@
+@import "../../styles/variables.scss";
+
+.skeleton {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &-chart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  &-chart-header {
+    width: 200px;
+    height: 24px;
+    background: linear-gradient(90deg, $soft-bbg 25%, $dark-bg 50%, $soft-bbg 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+    border-radius: 4px;
+  }
+  
+  &-chart-body {
+    flex: 1;
+    background: linear-gradient(90deg, $soft-bbg 25%, $dark-bg 50%, $soft-bbg 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+    border-radius: 4px;
+  }
+  
+  &-pie {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  &-pie-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &:before {
+      content: '';
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, $soft-bbg 25%, $dark-bg 50%, $soft-bbg 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s ease-in-out infinite;
+    }
+  }
+  
+  &-pie-legend {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+  }
+  
+  &-bar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  &-bar-body {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 0 20px;
+  }
+  
+  &-bar-item {
+    width: 30px;
+    background: linear-gradient(180deg, $soft-bbg 25%, $dark-bg 50%, $soft-bbg 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+    border-radius: 4px 4px 0 0;
+    height: 60%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
