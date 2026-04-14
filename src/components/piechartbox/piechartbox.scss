@@ -14,23 +14,28 @@
 
 .options{
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
     font-size: 14px;
+    padding: 10px 0;
 
     .option{
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
         align-items: center;
-    
+        min-width: 80px;
+        flex: 0 0 auto;
+
 
     .title{
         display: flex;
-        gap: 10px;
+        gap: 8px;
         align-items: center;
+        white-space: nowrap;
 
-    
+
 
     .dot{
         width: 10px;
