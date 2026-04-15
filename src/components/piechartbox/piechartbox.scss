@@ -1,8 +1,22 @@
+@import "../../styles/variables.scss";
+
 .pieChartBox{
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.exportButtons{
+    display: flex;
+    gap: 10px;
 }
 
 .piechart{
@@ -39,5 +53,64 @@
         
     }
 }
+    }
+}
+
+.exportButton{
+    padding: 8px 16px;
+    background-color: $soft-bbg;
+    color: $main-color;
+    border: 1px solid $dark-bg;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &:hover:not(:disabled){
+        background-color: $dark-bg;
+        border-color: $soft-bbg;
+    }
+
+    &:active:not(:disabled){
+        transform: scale(0.98);
+    }
+
+    &:focus{
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(0, 136, 254, 0.5);
+    }
+
+    &:disabled{
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+}
+
+.exportButtonCSV{
+    background-color: $dark-bg;
+    border-color: $soft-bbg;
+
+    &:hover:not(:disabled){
+        background-color: $soft-bbg;
+        border-color: $dark-bg;
+    }
+}
+
+.spinner{
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: $main-color;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
     }
 }
